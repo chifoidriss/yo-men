@@ -1,0 +1,145 @@
+
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}  
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.h-center {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+}
+.v-center {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+}
+.hv-center, .vh-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.fixed {
+    position: fixed !important;
+}
+.relative {
+    position: relative !important;
+}
+.absolute {
+    position: absolute !important;
+}
+
+.p-1{
+    padding: .25rem;
+}
+
+@each $key, $value in $themes {
+    .#{$key} {
+        background-color: $value !important;
+        @if lightness($value) > 50% {
+            color: $color-dark !important;
+        } @else {
+            color: $color-light !important;
+        }
+    }
+}
+
+@each $value in $paddings {
+    .p-#{$value} {
+        padding: $value * 0.25rem;
+    }
+    .py-#{$value} {
+        padding-top: $value * 0.25rem;
+        padding-bottom: $value * 0.25rem;
+    }
+    .px-#{$value} {
+        padding-left: $value * 0.25rem;
+        padding-right: $value * 0.25rem;
+    }
+    .pt-#{$value} {
+        padding-top: $value * 0.25rem;
+    }
+    .pr-#{$value} {
+        padding-right: $value * 0.25rem;
+    }
+    .pb-#{$value} {
+        padding-bottom: $value * 0.25rem;
+    }
+    .pl-#{$value} {
+        padding-left: $value * 0.25rem;
+    }
+
+    .m-#{$value} {
+        margin: $value * 0.25rem;
+    }
+    .my-#{$value} {
+        margin-top: $value * 0.25rem;
+        margin-bottom: $value * 0.25rem;
+    }
+    .mx-#{$value} {
+        margin-left: $value * 0.25rem;
+        margin-right: $value * 0.25rem;
+    }
+    .mt-#{$value} {
+        margin-top: $value * 0.25rem;
+    }
+    .mr-#{$value} {
+        margin-right: $value * 0.25rem;
+    }
+    .mb-#{$value} {
+        margin-bottom: $value * 0.25rem;
+    }
+    .ml-#{$value} {
+        margin-left: $value * 0.25rem;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.jc-center {
+    justify-content: center;
+}
+.jc-between {
+    justify-content: space-between;
+}
+.jc-around {
+    justify-content: space-around;
+}
+.jc-baseline {
+    justify-content: baseline;
+}
+.jc-start {
+    justify-content: flex-start;
+}
+.jc-end {
+    justify-content: flex-end;
+}
+
+button::selection, button:focus {
+    border-color: transparent;
+}

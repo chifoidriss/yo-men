@@ -1,0 +1,309 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #EEE;
+    /* font-family: Verdana, sans-serif; */
+}
+/* 20. preloader */
+.preloader {
+    background-color: #f7f7f7;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preloader .preloader-inner {
+    position: relative;
+}
+.preloader .preloader-inner .preloader-circle {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-style: solid;
+    border-width: 3px;
+    border-top-color:#1abc9c;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    z-index: 10;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 1px 5px 0 rgba(35, 181, 185, 0.15);
+    box-shadow: 0 1px 5px 0 rgba(35, 181, 185, 0.15);
+    background-color: #ffffff;
+    -webkit-animation: zoom 2000ms infinite ease;
+    animation: zoom 2000ms infinite ease;
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
+}
+.preloader .preloader-inner .preloader-circle2 {
+    border-top-color: #0078ff;
+}
+.preloader .preloader-inner .preloader-img {
+    position: absolute;
+    top: 50%;
+    z-index: 200;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-top: 6px;
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
+}
+
+.preloader .preloader-inner .preloader-img img {
+    max-width: 55px;
+}
+.preloader .preloader-inner .pere-text strong{
+    font-weight: 800;
+    color:#dca73a ;
+    text-transform: uppercase;
+}
+@-webkit-keyframes zoom {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .6s;
+        -o-transition: .6s;
+        transition: .6s;
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transition: .6s;
+        -o-transition: .6s;
+        transition: .6s;
+    }
+}
+
+@keyframes zoom {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .6s;
+        -o-transition: .6s;
+        transition: .6s;
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transition: .6s;
+        -o-transition: .6s;
+        transition: .6s;
+    }
+}
+
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}  
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.h-center {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+}
+.v-center {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+}
+.hv-center, .vh-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    height: 30vh;
+    width: 100vw;
+    /* background-color: rgba(0, 0, 0, .2); */
+    background-color: #1abc9c;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all .3s ease;
+    z-index: 20;
+    overflow: hidden;
+}
+.header .date-id {
+    font-size: 56px;
+    font-weight: 900;
+}
+.header .title {
+    font-size: 22px;
+    font-weight: 700;
+}
+.header .text {
+    /* font-size: 22px; */
+    font-weight: 500;
+}
+
+.content {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 30vh;
+    margin-bottom: 2.75rem;
+    overflow-x: auto;
+    z-index: 10;
+}
+
+.content .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 1rem;
+    height: 2.75rem;
+    overflow: hidden;
+    background-color: #DDD;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content .navbar .next, .content .navbar .prev {
+    cursor: pointer;
+}
+
+.content .card {
+    margin-top: 2.75rem;
+    /* position: absolute; */
+}
+.content .card .table {
+    padding: 0 1rem;
+}
+
+.app-bar {
+    padding: 0 .5rem;
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 2.75rem;
+    background-color: #FFF;
+    color: #000;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+}
+.app-bar .menu-brand {
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: .5rem;
+}
+.app-bar.jc-center {
+    justify-content: center;
+}
+.app-bar.jc-between {
+    justify-content: space-between;
+}
+.app-bar.jc-around {
+    justify-content: space-around;
+}
+.app-bar.jc-baseline {
+    justify-content: baseline;
+}
+.app-bar.jc-start {
+    justify-content: start;
+}
+.app-bar.jc-end {
+    justify-content: end;
+}
+
+.body {
+    padding: 0;
+    margin: 0;
+}
+
+.bottom-bar {
+    padding: 0 .5rem;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 2.75rem;
+    background-color: #FFF;
+    color: #000;
+    z-index: 20;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.bottom-bar .tab-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 3rem;
+    right: .25rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    color: #000;
+    z-index: 30;
+}
+.floating-button.bottom {
+    bottom: 3rem;
+}
+.floating-button.bottom-right {
+    bottom: 3rem;
+    right: .25rem;
+}
+.floating-button.bottom-left {
+    bottom: 3rem;
+    left: .25rem;
+}
+
+
+.floating-button.primary, .bottom-bar.primary, .app-bar.primary {
+    background-color: #1abc9c;
+    color: #FFF;
+}

@@ -1,0 +1,1 @@
+minify-all-js ./js -j -m -M -p -a

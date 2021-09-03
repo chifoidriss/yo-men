@@ -1,0 +1,38 @@
+
+<outlet name="content">
+    <div class="header one-date primary" id="header">
+        <div class="date-id">
+            [[ todayDay.id ]]
+        </div>
+        <div class="title">
+            <b>[[ todayDay.jour ]]</b>
+        </div>
+        <div class="text">
+            [[ todayDay.semaine ]]
+        </div>
+        <div class="text">
+            [[ todayDay.mois ]]
+            [[ todayDay.year ]]
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        <div class="navbar gray">
+            <div class="prev" ondblclick="onChangeYear(-1)" onclick="onChangeMonth(-1)">&#10094;</div>
+            <div class="">
+                [[ title ]]
+            </div>
+            <div class="next" ondblclick="onChangeYear(1)" onclick="onChangeMonth(1)">&#10095;</div>
+        </div>
+
+        <div class="app-container">
+            <div class="app-table">
+                <div #repeat="day in viewMonth" class="tr">
+                    <span class="td w1 co-[[ $day.semaineNum ]]"><b>[[ $day.id ]]</b></span>
+                    <span class="td co-[[ $day.semaineNum ]]">[[ $day.semaine ]]</span>
+                    <span class="td co-[[ $day.semaineNum ]]"><b>[[ $day.jour ]]</b></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</outlet>

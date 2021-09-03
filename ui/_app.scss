@@ -1,0 +1,364 @@
+/*
+|----------------------------------------------------------------
+| 0. Tab Content
+|----------------------------------------------------------------
+| 1. Customization App Navigation Bar
+| 2. Customization Body Content
+| 3. Customization Bottom Navigation Bar
+| 4. Customization Floating Actions Buttons
+| 5. Customization Drawer Menu
+| 6. Global Customization Application
+|
+*/
+
+/*
+|----------------------------------------------------------------
+| 1. Customization App Navigation Bar
+|----------------------------------------------------------------
+*/
+
+
+.app-bar {
+    padding: 0 .5rem;
+    position: relative;
+    right: 0;
+    left: 0;
+    height: $height;
+    background-color: $color-light;
+    color: $color-dark;
+    z-index: $z-10;
+    display: flex;
+    align-items: center;
+    box-shadow:  .5rem 0 .5rem 0 rgba(0, 0, 0, 0.15);
+    
+    &.navbar {
+        position: fixed;
+        top: 0;
+        margin-bottom: $height-margin;
+        
+        .menu-action, .menu-brand {
+            font-size: 22px;
+            font-weight: 700;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .menu-action {
+            cursor: pointer;
+            margin-left: -.5rem;
+            padding-left: .5rem;
+            padding-right: .5rem;
+        }
+        .menu-action .mi {
+            font-size: 24px;
+        }
+        .menu-brand {
+            padding: 0 .2rem;
+        }
+        .menu-left, .menu-right {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            flex: 0;
+        }
+        .menu-left {
+            flex: 1;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+    }
+
+    &.tabs {
+        padding: 0;
+        position: fixed;
+        bottom: 0;
+        margin-top: $height-margin;
+        justify-content: space-around;
+        
+        .tab-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            height: 100%;
+            padding: 0 .5rem;
+            cursor: pointer;
+            border-bottom-width: .24rem;
+            border-bottom-style: solid;
+            border-bottom-color: transparent;
+    
+            &.active {
+                border-bottom-color: $color-first;
+                background-color: $color-light;
+                color: $color-first;
+            }
+        }
+
+        &.primary, &.secondary, &.third {
+            &.active {
+                border-bottom-color: $color-light;
+                background-color: $color-active;
+                color: $color-dark;
+            }
+        }
+
+        &.top {
+            top: 0;
+            bottom: unset;
+        }
+        &.left {
+            left: 0;
+            bottom: unset;
+            flex-direction: column;
+        }
+        &.right {
+            right: 0;
+            bottom: unset;
+            flex-direction: column;
+        }
+    }
+}
+
+
+
+/*
+|----------------------------------------------------------------
+| 2. Customization Body Content
+|----------------------------------------------------------------
+*/
+
+.body {
+    padding: 0;
+    margin: 0;
+}
+
+
+/*
+|----------------------------------------------------------------
+| 3. Customization Bottom Navigation Bar
+|----------------------------------------------------------------
+*/
+
+
+
+/*
+|----------------------------------------------------------------
+| 4. Customization Floating Actions Buttons
+|----------------------------------------------------------------
+*/
+
+.app-floating-button {
+    position: fixed;
+    bottom: $espace-normal;
+    right: $espace-normal;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-light;
+    color: $color-dark;
+    z-index: $z-11;
+    cursor: pointer;
+    box-shadow: 0 .5rem .5rem 0 rgba(0, 0, 0, 0.15);
+
+    &.top {
+        top: $espace-normal;
+        right: unset;
+        bottom: unset;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &.top-right {
+        top: $espace-normal;
+        right: $espace-normal;
+        bottom: unset;
+        left: unset;
+    }
+    &.top-left {
+        top: $espace-normal;
+        right: unset;
+        bottom: unset;
+        left: $espace-normal;
+    }
+    &.bottom {
+        top: unset;
+        right: unset;
+        bottom: $espace-normal;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &.bottom-right {
+        top: unset;
+        right: $espace-normal;
+        bottom: $espace-normal;
+        left: unset;
+    }
+    &.bottom-left {
+        top: unset;
+        right: unset;
+        bottom: $espace-normal;
+        left: $espace-normal;
+    }
+    &.middle {
+        top: 50%;
+        right: unset;
+        bottom: unset;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &.middle-right {
+        top: 50%;
+        right: $espace-normal;
+        bottom: $espace-normal;
+        left: unset;
+        transform: translateY(-50%);
+    }
+    &.middle-left {
+        top: 50%;
+        right: unset;
+        bottom: $espace-normal;
+        left: $espace-normal;
+        transform: translateY(-50%);
+    }
+
+    &.no-top {
+        top: $espace-second;
+    }
+    &.no-right {
+        right: $espace-second;
+    }
+    &.no-bottom {
+        bottom: $espace-second;
+    }
+    &.no-left {
+        left: $espace-second;
+    }
+}
+
+
+/*
+|----------------------------------------------------------------
+| 5. Customization Drawer Menu
+|----------------------------------------------------------------
+*/
+
+.app-drawer {
+    background-color: $color-light;
+    color: $color-dark;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -$drawer-width;
+    width: $drawer-width;
+    height: $drawer-height;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    z-index: $z-12;
+    -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+    overflow-y: auto;
+    
+    &.open {
+        left: 0;
+    }
+    &.right {
+        left: unset;
+        right: -$drawer-width;
+    }
+    &.right.open {
+        right: 0;
+    }
+    &.top {
+        bottom: unset;
+        right: 0;
+        top: -105vh;
+        left: 0;
+        width: 100vw;
+    }
+    &.top.open {
+        top: 0;
+        height: 75vh;
+    }
+    &.bottom {
+        top: unset;
+        left: 0;
+        right: 0;
+        bottom: -100vh;
+        width: 100vw;
+    }
+    &.bottom.open {
+        bottom: 0;
+        height: 50vh;
+    }
+    &.full {
+        left: 0;
+        right: 0;
+        bottom: -100vh;
+        height: 0;
+        overflow: hidden;
+    }
+    &.full.open {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .close {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        color: #00000050;
+        cursor: pointer;
+    }
+    .close:hover {
+        color: $color-dark;
+    }
+}
+
+.app-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: $z-11;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: .5s ease;
+    -moz-transition: .5s ease;
+    -ms-transition: .5s ease;
+    -o-transition: .5s ease;
+    transition: .5s ease;
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+
+/*
+|----------------------------------------------------------------
+| 6. Global Customization Application
+|----------------------------------------------------------------
+*/
+

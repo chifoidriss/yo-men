@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cabam</title>
+    <link rel="stylesheet" href="/assets/fonts/roboto/style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/icons/mi/style.css">
+</head>
+<body class="app-default">
+    <div id="root">
+        <!-- Splash Screen Start -->
+        <div id="splash-screen">
+            <div class="preloader">
+                <div class="preloader-inner">
+                    <div class="preloader-circle"></div>
+                    <div class="preloader-img pere-text">
+                        <b>CABAM</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Splash Screen End-->
+
+        <!-- <span>
+            Bonjour
+            Gar
+        </span> -->
+
+        <!-- 
+            Hello
+            Mon pot
+        -->
+
+        <div _outlet="app-bar"></div>
+
+        <div class="body default" _outlet="content"></div>
+
+        <div class="app-floating-button bottom-right no-bottom primary" #openModal="modal">
+            <span class="mi">search</span>
+        </div>
+
+        <div class="app-modal full" _modal="modal">
+            <span class="close" #closeModal>
+                <i class="mi">close</i>
+            </span>
+            <div class="modal-content">
+                <div class="py-10 px-2">
+                    <div class="app-group">
+                        <label for="date">
+                            Veuillez choisir une date
+                        </label>
+                        <input type="date" class="control" id="date" min="1970-01-07" onchange="findDate(this.value)">
+                    </div>
+
+                    <div class="shadow one-date mt-10 p-4 default">
+                        <div class="date-id">
+                            [[ findDay.id ]]
+                        </div>
+                        <div class="title">
+                            <b>[[ findDay.jour ]]</b>
+                        </div>
+                        <div class="text">
+                            [[ findDay.semaine ]]
+                        </div>
+                        <div class="text">
+                            [[ findDay.mois ]]
+                            [[ findDay.year ]]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-bar tabs default">
+            <span class="tab-item active" #tab="/">
+                <span class="mi">home</span>
+                <span class="label">Accueil</span>
+            </span>
+            <span class="tab-item" #tab="/compte">
+                <span class="mi">person</span>
+                <span class="label">Idriss</span>
+            </span>
+            <span class="tab-item" #tab="/connexion">
+                <span class="mi">help</span>
+                <span class="label">Aide ?</span>
+            </span>
+        </div>
+    </div>
+
+    <script src="/script.classes.js"></script>
+    <script src="/script.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+$font-family: 'Roboto';
+// $font-family: 'Arial';
+// $font-family: 'Wasichu Book';
+// $font-family: 'Valentine Bright';
+// $font-family: 'Roboto Thin';
+
+$default-background-color:  #FFF;
+$default-text-color:        #000;
+
+$color-default: #F5FFFA !default;
+$color-first:   #1abc9c !default;
+$color-second:  #0078ff !default;
+$color-third:   #dca73a !default;
+$color-gray:   #DCDCDC !default;
+
+$color-light:   #FFFFFF;
+$color-dark:    #000000;
+$color-active:  #FFFFFF20;
+
+$themes: (
+    'default': $color-default,
+    'primary': $color-first,
+    'secondary': $color-second,
+    'third': $color-third,
+    'gray': $color-gray,
+);
+
+$drawer-width: 80vw;
+$drawer-height: 100%;
+
+$z-12:  120000;
+$z-11:  110000;
+$z-10:  100000;
+$z-9:   90000;
+$z-8:   80000;
+$z-7:   70000;
+$z-6:   60000;
+$z-5:   50000;
+$z-4:   40000;
+$z-3:   30000;
+$z-2:   20000;
+$z-1:   10000;
+
+$height:            2.75rem;
+$height-margin:     3rem;
+$height-sm:         2rem;
+$height-sm-margin:  2.25rem;
+$height-lg:         3.5rem;
+$height-lg-margin:  3.75rem;
+
+$espace-normal: .3rem;
+$espace-second: 3rem;
+
+$paddings: (1 2 3 4 5 6 7 8 9 10);
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: $default-background-color;
+    color: $default-text-color;
+    font-family: $font-family;
+}
+
+::-moz-selection {
+    background: $color-first;
+    color: #FFF;
+    text-shadow: none;
+}
+::selection {
+    background: $color-first;
+    color: #FFF;
+    text-shadow: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(204, 204, 204);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(97, 96, 96);
+    width: 10px;
+}

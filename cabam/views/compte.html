@@ -1,0 +1,76 @@
+<outlet name="app-bar">
+    <div class="app-bar navbar">
+        <div class="menu-action" #openDrawer="menu">
+            <span class="mi">menu</span>
+        </div>
+        <div class="menu-brand">
+            CABAM
+        </div>
+        <div class="menu-left">
+        </div>
+        <div class="menu-right">
+            <span class="menu-item">
+                <button class="app-btn avatar">
+                    <img src="/assets/img/logo.png">
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="app-drawer" _drawer="menu">
+        <span class="close" #closeDrawer>
+            <i class="mi">close</i>
+        </span>
+        <div class="drawer-header">
+        </div>
+        <div class="drawer-content"></div>
+        <div class="drawer-footer"></div>
+    </div>
+</outlet>
+
+<outlet name="content">
+    <div class="v-center p-4">
+        <div class="column">
+            <div class="column">
+                <div class="row jc-center ai-center">
+                    <span class="user-avatar primary">
+                        <span class="icon">
+                            I
+                        </span>
+                    </span>
+                </div>
+                <span class="username">
+                    Idriss CHIF
+                </span>
+            </div>
+            <div class="colum">
+                <div class="mt-5 mb-2">
+                    <div class="app-group">
+                        <label for="">Langue:</label>
+                        <label role="button" for="fr">
+                            <input type="radio" name="lang" id="fr" value="fr" #attribute="(Goba.lang == 'fr'):checked">
+                            Français
+                        </label>
+                        <label role="button" for="en">
+                            <input type="radio" name="lang" id="en" value="en" #attribute="(Goba.lang == 'en'):checked">
+                            English
+                        </label>
+                    </div>
+                    <div class="app-group">
+                        <label for="calendar">Calendrier:</label>
+                        <select name="calendar" id="calendar" class="control">
+                            <option value="bamendjo">Bamendjo</option>
+                            <option value="batcham">Batcham</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="">
+                    <button class="app-btn raised" role="button" onclick="updateApp()">
+                        <span class="mi">done_all</span>
+                        Enregistrer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</outlet>

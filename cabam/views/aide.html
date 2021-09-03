@@ -1,0 +1,61 @@
+<outlet name="app-bar">
+    <div class="app-bar navbar">
+        <div class="menu-action" #openDrawer>
+            <span class="mi">menu</span>
+        </div>
+        <div class="menu-brand">
+            XYZ
+        </div>
+        <div class="menu-left">
+            <span class="menu-item">
+                <button class="app-btn flat">
+                    <span class="mi">home</span>
+                    Accueil
+                </button>
+            </span>
+        </div>
+        <div class="menu-right">
+            <span class="menu-item">
+                <button class="app-btn flat">
+                    Blog
+                </button>
+            </span>
+            <span class="menu-item">
+                <button class="app-btn icon" >
+                    <span class="mi">person</span>
+                </button>
+            </span>
+            <span class="menu-item">
+                <button class="app-btn avatar">
+                    <img src="/assets/img/logo.png">
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="app-drawer">
+        <span class="close" #closeDrawer>
+            <i class="mi">close</i>
+        </span>
+        <div class="drawer-header">
+        </div>
+        <div class="drawer-content"></div>
+        <div class="drawer-footer"></div>
+    </div>
+
+    <div class="app-overlay" #closeDrawer></div>
+</outlet>
+
+<outlet name="content">
+    <div class="vh-center">
+        Hello Me.
+        <div class="column">
+            <div class="">
+                <a class="app-btn raised secondary" #link="/compte">
+                    <span class="mi">home</span>
+                    Compte
+                </a>
+            </div>
+        </div>
+    </div>
+</outlet>

@@ -1,0 +1,245 @@
+.app-btn {
+    position: relative;
+    border-radius: .25rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: .5rem;
+    cursor: pointer;
+
+    // -webkit-transition-duration: 0.4s; /* Safari */
+    // transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    
+    .mi {
+        font-size: 18px;
+    }
+    &::selection, &:focus {
+        border-color: transparent;
+    }
+    
+    &.block {
+        display: block;
+        width: 100%;
+    }
+    &.raised {
+        border-color: #EEE;
+        background-color: #FFF;
+        box-shadow: 0 .3rem .3rem 0 rgba(0, 0, 0, 0.15);
+    }
+    &.flat {
+        border-color: transparent;
+        background-color: transparent;
+    }
+    &.avatar {
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        img {
+            height: 1.8rem;
+            width: 1.8rem;
+            border-radius: 50%;
+        }
+    }
+    &.icon {
+        padding: .2rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        .mi {
+            font-size: 24px;
+        }
+    }
+    
+    &::after {
+        display: none;
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.3);
+        
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+        margin-left: -50px;
+        
+        /* Center the ripple */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      
+        animation: ripple 1s;
+        opacity: 0;
+    }
+    &:focus:not(:active)::after {
+        display: block;
+    }
+}
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(10);
+    }
+}
+
+.app-modal {
+    background-color: $color-light;
+    color: $color-dark;
+    position: fixed;
+    bottom: 1rem;
+    left: .5rem;
+    right: .5rem;
+    top: 0;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    z-index: $z-12;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease;
+    overflow-y: auto;
+    visibility: hidden;
+
+    &.full {
+        visibility: unset;
+        bottom: -100vh;
+        top: unset;
+        left: 0;
+        right: 0;
+        height: 100vh;
+    }
+
+    &.h-25 {
+        height: 25vh;
+    }
+    &.h-40 {
+        height: 40vh;
+    }
+    &.h-50 {
+        height: 50vh;
+    }
+    &.h-60 {
+        height: 60vh;
+    }
+    &.h-75 {
+        height: 75vh;
+    }
+
+    .modal-header {
+        padding: .5rem;
+        border-bottom: 1px solid #DDD;
+    }
+    .modal-content {
+        flex: 1;
+        padding: .5rem;
+        overflow: auto;
+    }
+    .modal-footer {
+        border-top: 1px solid #DDD;
+        padding: .5rem;
+    }
+
+    &.open {
+        top: 2rem;
+        visibility: visible;
+    }
+    &.full.open {
+        top: unset;
+        visibility: unset;
+        bottom: 0;
+    }
+
+    .close {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        color: #00000050;
+        cursor: pointer;
+    }
+    .close:hover {
+        color: $color-dark;
+    }
+}
+
+.app-group {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    .control {
+        width: 100%;
+        padding: .65rem .5rem;
+        box-sizing: border-box;
+        // display: inline-block;
+        border-width: .06rem;
+        border-style: solid;
+        border-color: #AAA;
+        
+        &:focus, &:hover {
+            outline: 0;
+            border-color: $color-first;
+            box-shadow: 0 .3rem .3rem 0 rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+.app-card {
+    background-color: #FFF;
+    color: #000;
+}
+.app-container {
+    width: 100%;
+    display: block;
+    // position: relative;
+}
+
+.app-table {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+
+    .tr {
+        width: 100%;
+        // box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        border-bottom: .05rem solid #DDD;
+
+        .td {
+            width: 100%;
+            // flex: 1;
+            padding: .5rem .75rem;
+
+            &.w1 { width: 10%; }
+            &.w2 { width: 20%; }
+            &.w3 { width: 30%; }
+            &.w4 { width: 40%; }
+            &.w5 { width: 50%; }
+            &.w6 { width: 60%; }
+            &.w7 { width: 70%; }
+            &.w8 { width: 80%; }
+            &.w9 { width: 90%; }
+            &.w10 { width: 100%; }
+        }
+    }
+}
